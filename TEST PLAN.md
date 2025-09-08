@@ -34,7 +34,7 @@ Out-of-scope (MVP)
 
 Tech choices (lean)
 	•	Vanilla TS or small React app (your call later).
-	•	Monaco or simple <textarea> (MVP can start with <textarea>).
+	•	Monaco or simple \<textarea\> (MVP can start with \<textarea\>).
 	•	SVG for timeline (fast iteration, crisp text, easy arrows).
 
 3) Data Model (AST)
