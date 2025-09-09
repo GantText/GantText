@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react';
 import { EditorState } from '@codemirror/state';
 import { EditorView, keymap, ViewUpdate } from '@codemirror/view';
 import { defaultKeymap, history, historyKeymap } from '@codemirror/commands';
-import { basicSetup } from 'codemirror';
 import { markdown } from '@codemirror/lang-markdown';
 
 export type EditorProps = {
@@ -20,7 +19,6 @@ export default function Editor({ value, onChange, className }: EditorProps) {
     const startState = EditorState.create({
       doc: value,
       extensions: [
-        basicSetup,
         keymap.of([...defaultKeymap, ...historyKeymap] as const),
         history(),
         markdown(),
