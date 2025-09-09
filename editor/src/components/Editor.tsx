@@ -4,7 +4,6 @@ import { EditorView, keymap, ViewUpdate } from '@codemirror/view';
 import { defaultKeymap, history, historyKeymap } from '@codemirror/commands';
 import { basicSetup } from 'codemirror';
 import { markdown } from '@codemirror/lang-markdown';
-import { oneDark } from '@codemirror/theme-one-dark';
 
 export type EditorProps = {
   value: string;
@@ -25,7 +24,16 @@ export default function Editor({ value, onChange, className }: EditorProps) {
         keymap.of([...defaultKeymap, ...historyKeymap] as const),
         history(),
         markdown(),
-        oneDark,
+        EditorView.theme({
+          '.cm-editor': { padding: '0', height: '100%' },
+          '.cm-scroller': {
+            fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif',
+            fontSize: '13px',
+            lineHeight: '1.5',
+            color: '#222',
+          },
+          '.cm-content': { padding: '0' },
+        }),
         EditorView.updateListener.of((v) => {
           if (v.docChanged && onChange) {
             const doc = v.state.doc.toString();

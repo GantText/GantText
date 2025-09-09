@@ -1,20 +1,50 @@
 # Page snapshot
 
 ```yaml
-- generic [ref=e5]:
-  - generic [ref=e6]:
-    - generic [ref=e7]: 8. 1.
-    - generic [ref=e8]: 9. 1.
-    - generic [ref=e9]: 10. 1.
-    - generic [ref=e10]: 11. 1.
-    - generic [ref=e11]: 12. 1.
-    - generic [ref=e12]: 13. 1.
-    - generic [ref=e13]: 14. 1.
-  - generic [ref=e23]:
-    - generic [ref=e25]: "- [ ] Analýza (2025-01-10:2d) Alice <alice@example.com>"
-    - generic [ref=e27]: Udělat rozhovory…
-    - generic [ref=e31]: "- [ ] Návrh (3d) Bob <bob@example.com>"
-    - generic [ref=e33]: Wireframy a flow.
-    - generic [ref=e37]: "- [ ] Implementace (5d) Charlie <charlie@example.com>"
-    - generic [ref=e39]: První vertikála…
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - generic [ref=e6]: 8. 1.
+    - generic [ref=e7]: 9. 1.
+    - generic [ref=e8]: 10. 1.
+    - generic [ref=e9]: 11. 1.
+    - generic [ref=e10]: 12. 1.
+    - generic [ref=e11]: 13. 1.
+    - generic [ref=e12]: 14. 1.
+  - generic [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]: "1"
+        - generic [ref=e21]: "2"
+        - generic [ref=e22]: "3"
+        - generic [ref=e23]: "4"
+        - generic [ref=e24]: "5"
+        - generic [ref=e25]: "6"
+        - generic [ref=e26]: "7"
+        - generic [ref=e27]: "8"
+      - generic [ref=e28]:
+        - generic [ref=e30] [cursor=pointer]: ⌄
+        - generic [ref=e32] [cursor=pointer]: ⌄
+        - generic [ref=e34] [cursor=pointer]: ⌄
+    - textbox [ref=e35]:
+      - generic [ref=e36]:
+        - generic [ref=e37]: "-"
+        - text: "[ ] Analýza (2025-01-10:2d) Alice"
+        - generic [ref=e38]: <
+        - generic [ref=e39]: alice@example.com
+        - generic [ref=e40]: ">"
+      - generic [ref=e41]: Udělat rozhovory…
+      - generic [ref=e43]:
+        - generic [ref=e44]: "-"
+        - text: "[ ] Návrh (3d) Bob"
+        - generic [ref=e45]: <
+        - generic [ref=e46]: bob@example.com
+        - generic [ref=e47]: ">"
+      - generic [ref=e48]: Wireframy a flow.
+      - generic [ref=e50]:
+        - generic [ref=e51]: "-"
+        - text: "[ ] Implementace (5d) Charlie"
+        - generic [ref=e52]: <
+        - generic [ref=e53]: charlie@example.com
+        - generic [ref=e54]: ">"
+      - generic [ref=e55]: První vertikála…
 ```
