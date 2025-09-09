@@ -1,46 +1,32 @@
 import { useState } from 'react'
 import './App.css'
-import Editor from './components/Editor'
 import { parseGantText } from './core/parser'
+import Timeline from './components/Timeline'
 
-const initialText = `- [ ] Analysis (2025-09-10:2d) Alice <alice@example.com>
-    Stakeholder interviews.
+const initialText = `- [ ] Analýza (2025-01-10:2d) Alice <alice@example.com>
+    Udělat rozhovory…
 
-    - [ ] Design (3d) Bob <bob@example.com>
-        Wireframes and flow.
+    - [ ] Návrh (3d) Bob <bob@example.com>
+        Wireframy a flow.
 
-- [x] Implementation (5d) Charlie <charlie@example.com>`
+- [ ] Implementace (5d) Charlie <charlie@example.com>
+    První vertikála…`
 
 function App() {
   const [text, setText] = useState<string>(initialText)
-  const { tasks, errors } = parseGantText(text)
+  // Keep parsing around for future layout but not used in unified view for now
+  parseGantText(text)
+
+  const params = new URLSearchParams(window.location.search)
+  const width = Number(params.get('w') ?? '876')
+  const height = Number(params.get('h') ?? '230')
+
+  const start = new Date('2025-01-08')
+  const end = new Date('2025-01-14')
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, padding: 16 }}>
-      <div>
-        <h2>Editor</h2>
-        <Editor value={text} onChange={(v) => setText(v)} />
-      </div>
-      <div>
-        <h2>Parsed Tasks</h2>
-        <ul>
-          {tasks.map(t => (
-            <li key={t.line}>
-              <code>line {t.line}</code> indent {t.indent} status {t.status ?? 'none'} — {t.title}
-            </li>
-          ))}
-        </ul>
-        {errors.length > 0 && (
-          <>
-            <h3>Errors</h3>
-            <ul>
-              {errors.map(e => (
-                <li key={e.line}><strong>line {e.line}:</strong> {e.message}</li>
-              ))}
-            </ul>
-          </>
-        )}
-      </div>
+    <div id="timeline" style={{ width, height, overflow: 'hidden' }}>
+      <Timeline start={start} end={end} width={width} source={text} onChange={setText} />
     </div>
   )
 }

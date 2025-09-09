@@ -27,10 +27,10 @@ Status: ✅ Completed
 5. ✅ **Deliverable**: Working text editor that parses GantText
 
 ### Phase 2: Core Rendering
-Status: Not started
-1. Build calendar header component
-2. Implement adaptive width calculation algorithm
-3. Create task row rendering system
+Status: In progress
+1. ✅ Build calendar header component
+2. ✅ Implement adaptive width calculation algorithm
+3. ✅ Create unified text-first timeline view (header + text rows)
 4. Basic layout engine for task positioning
 5. **Deliverable**: Static visual representation of tasks
 
