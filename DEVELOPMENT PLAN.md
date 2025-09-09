@@ -19,13 +19,15 @@ widths so that tasks fit exactly between start and end days.
 ## 3. Development Phases
 
 ### Phase 1: Foundation
-1. Set up project structure with Vite + React + TypeScript
-2. Implement basic GantText parser (text → AST)
-3. Create simple text editor with CodeMirror
-4. Basic task data model implementation
-5. **Deliverable**: Working text editor that parses GantText
+Status: ✅ Completed
+1. ✅ Set up project structure with Vite + React + TypeScript
+2. ✅ Implement basic GantText parser (text → AST) (initial)
+3. ✅ Create simple text editor with CodeMirror
+4. ✅ Basic task data model implementation (initial)
+5. ✅ **Deliverable**: Working text editor that parses GantText
 
 ### Phase 2: Core Rendering
+Status: Not started
 1. Build calendar header component
 2. Implement adaptive width calculation algorithm
 3. Create task row rendering system
@@ -33,6 +35,7 @@ widths so that tasks fit exactly between start and end days.
 5. **Deliverable**: Static visual representation of tasks
 
 ### Phase 3: Scheduling Logic
+Status: Not started
 1. Implement dependency-based scheduling
 2. Handle explicit start dates vs. calculated dates
 3. Build scheduler that computes start/end dates
@@ -40,6 +43,7 @@ widths so that tasks fit exactly between start and end days.
 5. **Deliverable**: Accurate task scheduling and positioning
 
 ### Phase 4: Interactive Features
+Status: Not started
 1. Drag and drop for date changes
 2. Resize handles for duration changes
 3. Click-to-focus text editing
@@ -47,6 +51,7 @@ widths so that tasks fit exactly between start and end days.
 5. **Deliverable**: Full interactive editing experience
 
 ### Phase 5: Polish & Testing
+Status: Not started
 1. Visual styling and colors by assignee
 2. Performance optimization
 3. Comprehensive testing (unit + integration + E2E)
@@ -54,7 +59,7 @@ widths so that tasks fit exactly between start and end days.
 5. **Deliverable**: Production-ready MVP
 
 ## 4. In-Scope (MVP)
-1. Text editor (CodeMirror 6 with syntax highlighting)
+1. ✅ Text editor (CodeMirror 6 with syntax highlighting)
 2. GantText parsing & validation
 3. Calendar header with adaptive day widths
 4. Scheduling:
@@ -98,7 +103,7 @@ src/
 ```
 
 ### Core Systems
-1. **Editor**: CodeMirror 6 with GantText syntax highlighting
+1. ✅ **Editor**: CodeMirror 6 with GantText syntax highlighting
 2. **Parser**: GantText → AST (tasks) with validation
 3. **Scheduler**: Computes start/end based on `(start:duration)` or dependencies
 4. **Layout Engine**: Calculates adaptive day widths by measuring text spans
@@ -194,16 +199,16 @@ type Project = {
 4. **Accuracy**: Perfect alignment between text and visual representation
 5. **Accessibility**: WCAG 2.1 AA compliance
 
-## 12. Project Setup Commands
+## 12. Project Setup Commands — ✅ Verified
 ```bash
 # Initialize project
-npm create vite@latest ganttext-editor -- --template react-ts
-cd ganttext-editor
+npm create vite@latest editor -- --template react-ts
+cd editor
 npm install
 
 # Core dependencies
 npm install @codemirror/state @codemirror/view @codemirror/lang-markdown
-npm install @codemirror/theme-one-dark @codemirror/basic-setup
+npm install @codemirror/theme-one-dark codemirror
 
 # Development dependencies
 npm install -D vitest @testing-library/react @testing-library/jest-dom
